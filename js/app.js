@@ -51,7 +51,7 @@ AppState.prototype.loadItems = function () {
   if (retrievedProducts) {
     for (let i = 0; i < parseProducts.length; i++) {
       if (parseProducts[i].name === "sweep") {
-        let reconstruir = new Product(parseProducts[i].name, ".png");
+        let reconstruir = new Product(parseProducts[i].name, "png");
         reconstruir.timesClicked = parseProducts[i].timesClicked;
         reconstruir.timesShown = parseProducts[i].timesShown;
         this.allProducts.push(reconstruir);
