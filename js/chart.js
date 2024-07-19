@@ -10,6 +10,9 @@ let canvasElem = document.getElementById('chart')
  * - Call chart.js with the configuration and the canvasElem
  *
  */
+
+
+
 function renderChart() {
 }
 
