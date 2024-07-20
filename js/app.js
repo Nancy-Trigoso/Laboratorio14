@@ -45,7 +45,7 @@ AppState.prototype.saveToLocalStorage = function () {
 AppState.prototype.loadItems = function () {
   // TODO: Update this instance method to retrieve data from local storage instead of creating new Products on each page load
 
-  let retrievedProducts = localStorage.getItem("allProducts");
+  /*let retrievedProducts = localStorage.getItem("allProducts");
   let parseProducts = JSON.parse(retrievedProducts);
 
   if (retrievedProducts) {
@@ -64,7 +64,18 @@ AppState.prototype.loadItems = function () {
     }
   }
 
-  this.instantiateProducts();
+  this.instantiateProducts();*/
+
+
+  const Data = localStorage.getItem('allProducts');
+  if (Data !== null) {
+    const acceder = JSON.parse(Data);
+    this.allProducts.push(...acceder);
+    console.log(this.allProducts);
+  } else {
+    this.instantiateProducts();
+  }
+
 };
 
 function Product(name, fileExtension = "jpg") {

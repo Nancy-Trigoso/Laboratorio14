@@ -21,9 +21,10 @@ function renderChart() {
   const productTimesShown = [];
 
   for (let i = 0; i < state.allProducts.length; i++) {
-    productsName.push(state.allProducts[i].name);
-    productTimesClicked.push(state.allProducts[i].timesClicked);
-    productTimesShown.push(state.allProducts[i].timesShown);
+    const product = state.allProducts[i];
+    productsName.push(product.name);
+    productTimesClicked.push(product.timesClicked);
+    productTimesShown.push(product.timesShown);
   }
 
   let chartObj = {
@@ -42,32 +43,11 @@ function renderChart() {
           data: productTimesShown,
           borderwidth: 1,
           backgroundcolor: ["#8BC2F6"],
+       
         },
       ],
     },
-    options: {
-      indexAxis: "y",
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: { color: "black" },
-        },
-        x: {
-          ticks: { color: "black" },
-        },
-      },
-      plugins: {
-        legend: {
-          labels: {
-            color: "black",
-            padding: 30,
-            font: {
-              size: 16,
-            },
-          },
-        },
-      },
-    },
+    
   };
   new Chart(canvasElem, chartObj);
 }
