@@ -44,7 +44,7 @@ function renderChart() {
           borderwidth: 1,
           backgroundcolor: ["#8BC2F6"],
        
-        },
+        }
       ]
     },
     
