@@ -48,7 +48,7 @@ function renderChart() {
       ]
     },
     
-  }
+  },
   new Chart(canvasElem, chartObj);
 }
 
