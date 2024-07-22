@@ -76,7 +76,7 @@ AppState.prototype.loadItems = function () {
     this.instantiateProducts();
   }
 
-
+}
 
 function Product(name, fileExtension = "jpg") {
   this.name = name;
