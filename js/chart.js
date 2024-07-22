@@ -16,13 +16,13 @@ function renderChart() {
 
   state.loadItems();
 
-  const productName = [];
-  const productTimesClicked = [];
-  const productTimesShown = [];
+ const productsName = [];
+ const productTimesClicked = [];
+ const productTimesShown = [];
 
   for (let i = 0; i < state.allProducts.length; i++) {
     const product = state.allProducts[i];
-    productName.push(product.name);
+    productsName.push(product.name);
     productTimesClicked.push(product.timesClicked);
     productTimesShown.push(product.timesShown);
   }
@@ -30,7 +30,7 @@ function renderChart() {
   let chartObj = {
     type: "bar",
     data: {
-      labels: productName,
+      labels: productsName,
       datasets: [
         {
           label: "#of votes",
@@ -44,9 +44,9 @@ function renderChart() {
           borderwidth: 1,
           backgroundcolor: ["#8BC2F6"],
        
-        }
+        },
       ],
-    }
+    },
     
   };
   new Chart(canvasElem, chartObj);
