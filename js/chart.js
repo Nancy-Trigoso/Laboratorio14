@@ -16,13 +16,13 @@ function renderChart() {
 
   state.loadItems();
 
-  const productsName = [];
+  const productName = [];
   const productTimesClicked = [];
   const productTimesShown = [];
 
   for (let i = 0; i < state.allProducts.length; i++) {
     const product = state.allProducts[i];
-    productsName.push(product.name);
+    productName.push(product.name);
     productTimesClicked.push(product.timesClicked);
     productTimesShown.push(product.timesShown);
   }
@@ -30,7 +30,7 @@ function renderChart() {
   let chartObj = {
     type: "bar",
     data: {
-      labels: productsName,
+      labels: productName,
       datasets: [
         {
           label: "#of votes",
