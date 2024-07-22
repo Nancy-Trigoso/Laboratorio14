@@ -25,7 +25,7 @@ function renderChart() {
     productName.push(product.name);
     productTimesClicked.push(product.timesClicked);
     productTimesShown.push(product.timesShown);
-  };
+  }
 
   let chartObj = {
     type: "bar",
@@ -45,10 +45,10 @@ function renderChart() {
           backgroundcolor: ["#8BC2F6"],
        
         }
-      ]
-    },
+      ],
+    }
     
-  },
+  };
   new Chart(canvasElem, chartObj);
 }
 
