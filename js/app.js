@@ -38,8 +38,8 @@ AppState.prototype.instantiateProducts = function () {
 
 AppState.prototype.saveToLocalStorage = function () {
   // TODO: Fill in this instance method to save product data to local storage
- 
-  localStorage.setItem("allProducts", JSON.stringify(this.allProducts));
+ let stringifyValue = JSON.stringify(this.allProducts);
+  localStorage.setItem("allProducts", stringifyValue);
 };
 
 AppState.prototype.loadItems = function () {
@@ -67,7 +67,7 @@ AppState.prototype.loadItems = function () {
   this.instantiateProducts();*/
 
 
-  const Data = localStorage.getItem('allProducts');
+   const Data = localStorage.getItem('allProducts');
   if (Data !== null) {
     const acceder = JSON.parse(Data);
     this.allProducts.push(...acceder);
@@ -76,7 +76,7 @@ AppState.prototype.loadItems = function () {
     this.instantiateProducts();
   }
 
-}
+};
 
 function Product(name, fileExtension = "jpg") {
   this.name = name;
